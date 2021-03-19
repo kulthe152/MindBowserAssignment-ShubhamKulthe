@@ -1,0 +1,113 @@
+<div class="bootstrap-wrapper">
+
+    <div class="container mt">
+
+        <div class="row">
+
+            <div class="col-md-6 offset-md-3">
+                
+                <h1 class="text-center">Manager Signup</h1>
+
+                <form (ngSubmit)="onSubmitSignup()">
+
+                    <mat-form-field class="full-width">
+                        <mat-label>First Name</mat-label>
+                        <input 
+                        [(ngModel)]="manager.firstname"
+                        name="firstname"
+                        required
+                        type="text" 
+                        matInput 
+                        />
+                    </mat-form-field>
+                    
+                    
+                    <mat-form-field class="full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input 
+                        [(ngModel)]="manager.lastname"
+                        name="lastname"
+                        required
+                        type="text" 
+                        matInput 
+                    />
+                </mat-form-field>
+              
+                    <mat-form-field class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input 
+                        [(ngModel)]="manager.email"
+                        name="email"
+                        required
+                        type="text" 
+                        matInput 
+                    />
+                    </mat-form-field>
+                    
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input 
+                        [(ngModel)]="manager.password"
+                        name="password"
+                        required
+                        type="password" 
+                        matInput 
+                    />
+                    </mat-form-field>
+                   
+                   
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Date of Birth</mat-label>
+                        <input 
+                        [(ngModel)]="manager.dob"
+                        name="dob"
+                        required
+                        type="date" 
+                        matInput 
+                    />
+                </mat-form-field>
+              
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Company</mat-label>
+                        <input 
+                        [(ngModel)]="manager.company"
+                        name="company"
+                        required
+                        type="text" 
+                        matInput 
+                    />
+                </mat-form-field>
+              
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Address</mat-label>
+                        <input 
+                        [(ngModel)]="manager.address"
+                        name="address"
+                        required
+                        type="text" 
+                        matInput 
+                    />
+                    </mat-form-field>
+
+
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary">submit</button>
+                        <button style="margin-left: 10px" type="reset" mat-raised-button color="accent">Reset</button>
+                        <button (click)="showLogin()" style="margin-left: 10px" mat-raised-button>Click here for Login</button> 
+                    </div>
+                    
+                </form>
+
+                <br>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

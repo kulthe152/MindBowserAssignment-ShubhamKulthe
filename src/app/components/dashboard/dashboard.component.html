@@ -1,0 +1,60 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt">
+        <h1>Welcome to Manager Panel</h1>
+        <h3 *ngIf="user">user is {{user.name}}</h3>
+        <button mat-raised-button routerLink="/create-employee">Add Employee</button>
+    </div>
+</div>
+
+
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt">
+
+            <h2>Employee List</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Employee id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                        <th>Date of birth</th>
+                        <th>moble </th>
+                        <th>city</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let employee of employees">
+                        <td> {{ employee.eid }} </td>
+                        <td> {{ employee.firstname }} </td>
+                        <td> {{ employee.lastname }} </td>
+                        <td> {{ employee.address }} </td>
+                        <td> {{ employee.dob }} </td>
+                        <td> {{ employee.mobile }} </td>
+                        <td> {{ employee.city }} </td> 
+                        <td> 
+                                <!-- (click) = "updateEmployee(employee.eid)" -->
+                                <button  class="btn btn-info"  mwlConfirmationPopover
+                                        [popoverTitle]="popoverTitle"
+                                        [popoverMessage]="popoverMessage"
+                                        placement="left"
+                                        (confirm) = "updateEmployee(employee.eid)"
+                                        (cancel) = "cancelClicked = true">
+                                Update</button>
+                                
+                                <button  class="btn btn-danger" style="margin-left: 10px"  mwlConfirmationPopover
+                                [popoverTitle]="popoverTitle"
+                                [popoverMessage]="popoverMessage"
+                                placement="top"
+                                (confirm) = "deleteEmployee(employee.eid)"
+                                (cancel) = "cancelClicked = true">
+                                Delete</button>
+                        </td>            
+                    </tr>
+                </tbody>
+            </table>
+
+    </div>
+</div>
+

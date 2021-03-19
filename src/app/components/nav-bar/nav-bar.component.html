@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+    <span><a mat-icon-button *ngIf="!loggedIn" routerLink="/">Login App Manager</a></span>
+    <span><a mat-icon-button *ngIf="loggedIn" routerLink="/create-employee" >Add Employee</a></span>
+    <span class="example-spacer"></span>
+    <a mat-icon-button *ngIf="!loggedIn" routerLink="/login">Login</a>
+    <a mat-icon-button *ngIf="loggedIn" routerLink="/employees">Back</a>
+    <a *ngIf="loggedIn" (click)="logoutUser()" mat-icon-button>Logout</a>
+</mat-toolbar>
